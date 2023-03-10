@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 export default  function (subredditObject) {
 
 return <div className="subreddit">
-<ul classname="subreddit-list">
+<ul className="subreddit-list">
     <li className="subreddit-item">crochet</li>
     <li className="subreddit-item">knitting</li>
     <li className="subreddit-item">diy</li>

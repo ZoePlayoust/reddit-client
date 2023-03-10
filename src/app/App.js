@@ -1,8 +1,7 @@
-
 import './App.css';
-import Header from '../components/header'
+import Header from '../components/header';
 import Subreddit from '../components/subredditList';
-import Posts from '../components/posts';
+import SelectedSubreddit from '../features/selectedSubreddit/selectedSubreddit';
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
             <Subreddit />
             </div>
           <div className='post'>
-            <Posts />
+           <SelectedSubreddit />
           </div>
    
     </div>
