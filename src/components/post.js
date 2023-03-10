@@ -20,7 +20,7 @@ const commentsNumber= article.num_comments;
 console.log(article)
     return  (
 
-    <div className="main-content">                         
+    <li className="main-content">                         
         <ul className="title-list">
             <li className="title"><a target ="_blank" href={"https://reddit.com"+ permalink}> {title}</a></li>
             <li className="ratings"><span className="minus">-</span> {ratings}<span className="plus">+</span> </li>
@@ -37,7 +37,7 @@ console.log(article)
             
         </ul>
         </div>
-    </div>
+    </li>
 
    )
 }
