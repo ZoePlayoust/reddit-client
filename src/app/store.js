@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import selectedSubredditReducer from '../features/selectedSubreddit/selectedSubredditSlice'
+import currentSubredditReducer from '../features/currentSubreddit/currentSubredditSlice'
 // import commentsReducer from '../features/comments/commentsDisplaySlice'
-// import subredditListReducer from '../features/subredditList/subredditListDisplaySlice'
+// import subredditListDisplayReducer from '../features/subredditList/subredditListDisplaySlice'
 
 export default configureStore({
   reducer: {
-    selectedSubreddit: selectedSubredditReducer,
+    currentSubreddit : currentSubredditReducer,
+    // subredditList: subredditListDisplayReducer,
     // comments:  commentsReducer, 
-    // subredditList: subredditListReducer,
+   
 
   },
 });

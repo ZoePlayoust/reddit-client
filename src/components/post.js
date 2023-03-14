@@ -17,8 +17,8 @@ const rawDate= new Date (article.created * 1000) ;
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const date = `${month[rawDate.getMonth()]} ${rawDate.getDate()}, ${rawDate.getFullYear()}  `; 
 const commentsNumber= article.num_comments;
-console.log(article)
-    return  (
+
+return (
 
     <li className="main-content">                         
         <ul className="title-list">
