@@ -1,33 +1,21 @@
 import {createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-
-// For future - Replace Crochet with the selected subreddit in the async bracket
  
 export const loadCurrentSubreddit = createAsyncThunk(
   'NewSubreddit/loadNewSubreddit',
-   async (sub) => {
-    if (sub){
-    const data = await fetch(`https://www.reddit.com/r/${sub}/.json?limit=50`)
+  async (sub = 'plants') => {
+    const data = await fetch(`https://www.reddit.com/r/${sub}/.json?limit=20`);
     const json = await data.json();
-    return json}
-
-    else if (sub === undefined){
-        const data = await fetch(`https://www.reddit.com/r/plants/.json?limit=50`)
-        const json = await data.json();
     return json;
-    };
-    
   }
 );
-
     
-
 export const currentSubredditSlice = createSlice({
   name: 'currentSubreddit',
   initialState: {
     subreddit: [],
     isLoadingCurrentSubreddit: false,
-    hasError: false
+    hasError: false,
   },
   extraReducers: (builder) => {
     builder
@@ -38,8 +26,7 @@ export const currentSubredditSlice = createSlice({
       .addCase(loadCurrentSubreddit.fulfilled, (state, action) => {
         state.isLoadingCurrentSubreddit = false;
         state.hasError = false;
-        state.subreddit = action.payload;
-        
+        state.subreddit = action.payload.data.children;
       })
       .addCase(loadCurrentSubreddit.rejected, (state) => {
         state.isLoadingCurrentSubreddit = false;
@@ -50,6 +37,9 @@ export const currentSubredditSlice = createSlice({
 });
 
 export const selectCurrentSubreddit = (state) => state.currentSubreddit.subreddit;
+
 export const isLoadingCurrentSubreddit = (state) => state.currentSubreddit.isLoadingCurrentSubreddit;
+
+export const { searchFilter } = currentSubredditSlice.actions;
 
 export default currentSubredditSlice.reducer;

@@ -1,14 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import currentSubredditReducer from '../features/currentSubreddit/currentSubredditSlice'
-// import commentsReducer from '../features/comments/commentsDisplaySlice'
-// import subredditListDisplayReducer from '../features/subredditList/subredditListDisplaySlice'
+import searchTermReducer from '../features/search/searchSlice';
 
 export default configureStore({
   reducer: {
-    currentSubreddit : currentSubredditReducer,
-    // subredditList: subredditListDisplayReducer,
-    // comments:  commentsReducer, 
-   
-
-  },
+    currentSubreddit: currentSubredditReducer,
+    searchTerm: searchTermReducer,
+   },
 });

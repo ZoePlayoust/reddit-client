@@ -6,7 +6,6 @@ import React from "react";
 // Will receive props to display
 
 export default function (props){
-    
 const article = props.article.data;
 const permalink = article.permalink;
 const title = article.title;
