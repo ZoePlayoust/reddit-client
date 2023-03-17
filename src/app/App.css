@@ -73,6 +73,7 @@ img{
   
 }
 
+
 .main-content{
     display: flex;
     flex-direction: column;
@@ -104,6 +105,15 @@ list-style: none;
 
 ul.extra-infos{
     padding: 15px 5px 
+}
+
+li.comments:hover{
+    cursor: pointer;
+    }
+
+span.comment-number{
+    margin-left: 3px;
+    vertical-align: top;
 }
 
 div.main-content {

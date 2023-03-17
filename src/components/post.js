@@ -1,11 +1,11 @@
 import React from "react";
-// import { FontAwesomeIcon } from '@fontawesome/react-fontawesome';
-// import { faComment } from '@fortawesome/free-solid-svg-icons'
-
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import CommentDisplay from '../features/comments/commentsDisplay'
 
 // Will receive props to display
 
 export default function (props){
+const index = props.index;
 const article = props.article.data;
 const permalink = article.permalink;
 const title = article.title;
@@ -30,8 +30,8 @@ return (
         <ul className="extra-infos">
             <li className="Author">{author}</li>
             <li className="Date">{date}</li>
-            <li className="comments">{commentsNumber +` `}
-            {/* <FontAwesomeIcon icon={faComment} /> */}
+            <li index={index} className="comments" id='triggerComments'><ChatBubbleIcon /><span className="comment-number">{commentsNumber +` `}</span>
+            <CommentDisplay />
             </li>
             
         </ul>
