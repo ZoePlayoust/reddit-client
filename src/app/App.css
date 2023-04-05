@@ -107,7 +107,7 @@ ul.extra-infos{
     padding: 15px 5px 
 }
 
-li.comments:hover{
+div.comment-teaser:hover{
     cursor: pointer;
     }
 

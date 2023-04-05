@@ -4,17 +4,22 @@ export const commentDisplaySlice = createSlice({
   name: 'commentDisplay',
   initialState: {
     comments: {
-      0: { isOpened: true }
     }
   },
   reducers: {
     addCommentDisplay: (state, action) => {
-      const { id } = action.payload;
-      state.comments[id] = { isOpened: true };
+      const { id, subreddit } = action.payload;
+    
+      if (!state.comments[subreddit]) {
+        state.comments[subreddit] = {};
+      }
+      state.comments[subreddit][id] = { isOpened: true };
     },
+
     toggleCommentDisplay: (state, action) => {
-      const { id } = action.payload;
-      state.comments[id].isOpened = !state.comments[id].isOpened;
+  const { id, subreddit } = action.payload;
+
+  state.comments[subreddit][id].isOpened = !state.comments[subreddit][id].isOpened; 
     }
   }
 });
