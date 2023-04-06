@@ -57,7 +57,6 @@ const CurrentSubreddit = () => {
         {filteredPosts.length ? (
           <ul className='posts-list'>
             {filteredPosts.map((article, index) => (
-              
               <Post key={index} article={article} index={index}/>
               
             ))}

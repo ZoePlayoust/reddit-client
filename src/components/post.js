@@ -13,6 +13,7 @@ const img= article.url;
 const author= article.author; 
 const date = timeConverter(article.created)
 const commentsNumber= article.num_comments;
+const redditId = props.article.data.id
 
 return (
 
@@ -23,7 +24,7 @@ return (
         </ul>
         <div className="infos">
             { (article.thumbnail !== 'self' && article.is_gallery !== true && article.is_video !== true ) ? <img src={img}></img> : ' '}
-            <CommentDisplay commentsNumber={commentsNumber +` `} index={index} author={author} date={date}/>
+            <CommentDisplay commentsNumber={commentsNumber +` `} index={index} author={author} date={date} redditId={redditId}/>
         </div>
     </li>
 

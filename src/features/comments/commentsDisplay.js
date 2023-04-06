@@ -6,7 +6,7 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCommentDisplay, toggleCommentDisplay, selectComment } from '../comments/commentsDisplaySlice';
 import { selectCurrentSubreddit } from '../currentSubreddit/currentSubredditSlice';
-import { Comment } from '../../components/comment';
+import CurrentComment from '../loadComments/loadComments'; 
 
 
 const CommentDisplay = (props) => {
@@ -37,8 +37,9 @@ const CommentDisplay = (props) => {
  
  
 
-  const { index, author, date, commentsNumber } = props;
+  const { index, author, date, commentsNumber, redditId } = props;
   const isOpened = checkIsOpened(index);
+
 
   return (
     <>
@@ -49,7 +50,9 @@ const CommentDisplay = (props) => {
           <li index={index} className="comments">
             <div className="comment-teaser">
               <ChatBubbleIcon
-              onClick={() => addCommentToStore(index)} 
+              onClick={() =>{ addCommentToStore(index); 
+              return <CurrentComment redditId={redditId}/> 
+            }  } 
                 aria-label="expand"
                 size="small"
               />
@@ -58,7 +61,9 @@ const CommentDisplay = (props) => {
           </li>
         </ul>
         <Collapse in={isOpened}>
-          {/* <Comment/> */}
+        { isOpened && (
+        <CurrentComment redditId={redditId}/>
+      )}
         </Collapse>
         <div className="comment-toggle">
           {isOpened ? (

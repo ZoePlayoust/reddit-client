@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+    
+
 export const commentDisplaySlice = createSlice({
   name: 'commentDisplay',
   initialState: {
@@ -9,11 +11,11 @@ export const commentDisplaySlice = createSlice({
   reducers: {
     addCommentDisplay: (state, action) => {
       const { id, subreddit } = action.payload;
-    
       if (!state.comments[subreddit]) {
         state.comments[subreddit] = {};
       }
       state.comments[subreddit][id] = { isOpened: true };
+
     },
 
     toggleCommentDisplay: (state, action) => {
@@ -21,7 +23,8 @@ export const commentDisplaySlice = createSlice({
 
   state.comments[subreddit][id].isOpened = !state.comments[subreddit][id].isOpened; 
     }
-  }
+  }, 
+ 
 });
 
 export const selectComment = (state) => state.commentDisplay.comments;
