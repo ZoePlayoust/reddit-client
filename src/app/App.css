@@ -10,9 +10,10 @@
     grid-template-columns: 15% 85%;
    }
   }
+
+    
   
-  
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 750px) {
     .grid{
      display: block;
      margin: 0 25px;
@@ -57,6 +58,7 @@ h1{
     }
     .header{
         display:block;
+     
     }
     .inputs{
         padding-bottom: 10px
@@ -80,28 +82,22 @@ img{
     border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 5px;
-
 }
 
 ul.title-list, ul.extra-infos{
 display: flex;
-justify-content: space-between;
+justify-content: space-between ;
 list-style: none;
+height:max-content; 
 }
 
 .title-list{
-    padding: 15px 15px
-}
-
-.title-list{
+    padding: 15px 15px; 
     font-weight: 700;
+    
 }
-.minus{
-    color: red;
-}
-.plus{
-    color:green;
-}
+
+
 
 ul.extra-infos{
     padding: 15px 5px 
@@ -120,6 +116,41 @@ div.main-content {
     margin-bottom: 5px;
 }
 
+@media only screen and (max-width: 750px) {
+    .title{
+     font-size: 12px
+    }
+   }
+   @media only screen and (max-width: 480px) {
+    .title{
+     font-size: 10px
+    }
+   }
+
+/* Ratings */
+.minus{
+    font-size: 25px;
+    font-weight: 100;
+    color: red;
+    padding-right : 10px;
+}
+.minus:hover{
+   cursor: pointer;
+}
+.plus{
+    font-size: 25px;
+    font-weight: 100;
+    color:green;
+    padding-left : 10px;
+}
+.plus:hover{
+    cursor: pointer;
+ }
+
+ .bordered {
+    font-weight: bolder;
+  }
+  
 /*Subreddit*/
 
 ul{
@@ -150,4 +181,27 @@ li.subreddit-item:hover {
         display: inline;
         
     }
+}
+
+/* Comments */
+
+ul.comments-infos{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+li.comments-name, .comments-date{
+    padding: 5px 15px;
+    
+}
+
+li.comments-name{
+    font-weight: bold;
+}
+p.comments-body{
+    padding: 5px 15px
+}
+.arrow-icon:hover{
+cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from "@mui/material/Card";
+
 import Collapse from "@mui/material/Collapse";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
@@ -43,7 +43,7 @@ const CommentDisplay = (props) => {
 
   return (
     <>
-      <Card sx={{ minWidth: 300, border: "1px solid rgba(211,211,211,0.6)" }}>
+      <div>
         <ul className="extra-infos">
           <li className="Author">{author}</li>
           <li className="Date">{date}</li>
@@ -67,12 +67,13 @@ const CommentDisplay = (props) => {
         </Collapse>
         <div className="comment-toggle">
           {isOpened ? (
-            <KeyboardArrowUpIcon className="arrow-icon" />
+            <KeyboardArrowUpIcon className="arrow-icon" onClick={() => {
+              addCommentToStore(index)}} />
           ) : (
             null
           )}
         </div>
-      </Card>
+      </div>
     </>
   );
 };

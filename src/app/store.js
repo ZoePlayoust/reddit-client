@@ -3,6 +3,7 @@ import currentSubredditReducer from '../features/currentSubreddit/currentSubredd
 import searchTermReducer from '../features/search/searchSlice';
 import commentDisplayReducer from '../features/comments/commentsDisplaySlice';
 import loadCommentsReducer from '../features/loadComments/loadCommentsSlice';
+import ratingsReducer from '../features/Rating/ratingSlice';
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     searchTerm: searchTermReducer,
     commentDisplay: commentDisplayReducer,
     loadComments: loadCommentsReducer,
+    ratings: ratingsReducer,
    },
 });

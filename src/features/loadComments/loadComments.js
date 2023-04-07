@@ -6,7 +6,7 @@ import {
 } from '../loadComments/loadCommentsSlice';
 import {selectComment} from '../comments/commentsDisplaySlice'
 import { selectCurrentSubreddit } from '../currentSubreddit/currentSubredditSlice';
-
+import Comments  from '../../components/comments';
 
 const CurrentComment = (props) => {
   const dispatch = useDispatch();
@@ -16,7 +16,6 @@ const CurrentComment = (props) => {
   const clickedComments = useSelector(selectComment)
 
   const lengthComments = Object.keys(clickedComments).length
-
   const id = props.redditId;
 
   useEffect(() => {
@@ -28,18 +27,23 @@ const CurrentComment = (props) => {
 
   if (commentsLoaded.isLoadingCurrentComment) {
     return <div>Loading</div>;
-  } else if (!commentsLoaded) {
-    return <div>There are no comments</div>;
   } else if (commentsLoaded.hasError) {
     return <div>Failed</div>;
-  }
+  } else {
+    const comments = commentsLoaded[currentSubreddit] && commentsLoaded[currentSubreddit][id];
 
-  return (
-    <div className='grid'>
-      {/* Render commentsLoaded.data */}
-      <p>Hi</p>
-    </div>
-  );
-};
+    if (!comments || comments.length<1) {
+      return <div>There are no comments</div>;
+    } else {
+      return (
+        <div className='comments-container'>
+          {comments.map((comment, key) => (
+            <Comments key={key} infos={comment} />
+          ))}
+        </div>
+      );
+    }
+  }
+}
 
 export default CurrentComment;

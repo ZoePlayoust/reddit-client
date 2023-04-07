@@ -1,9 +1,11 @@
 import React from "react";
 import CommentDisplay from '../features/comments/commentsDisplay'
 import timeConverter from "../utilities/timeConverter";
-// Will receive props to display
+import Rating from "../features/Rating/rating";
 
 export default function (props){
+
+const id = props.article.data.id
 const index = props.index;
 const article = props.article.data;
 const permalink = article.permalink;
@@ -17,10 +19,10 @@ const redditId = props.article.data.id
 
 return (
 
-    <li className="main-content">                         
+    <li className="main-content"  >                         
         <ul className="title-list">
             <li className="title"><a target ="_blank" href={"https://reddit.com"+ permalink}> {title}</a></li>
-            <li className="ratings"><span className="minus">-</span> {ratings}<span className="plus">+</span> </li>
+            <li className="ratings"><Rating ratings={ratings} index={id}/></li>
         </ul>
         <div className="infos">
             { (article.thumbnail !== 'self' && article.is_gallery !== true && article.is_video !== true ) ? <img src={img}></img> : ' '}
