@@ -21,7 +21,7 @@ return (
 
     <li className="main-content"  >                         
         <ul className="title-list">
-            <li className="title"><a target ="_blank" href={"https://reddit.com"+ permalink}> {title}</a></li>
+            <li className="title"><a className="title" target ="_blank" href={"https://reddit.com"+ permalink}> {title}</a></li>
             <li className="ratings"><Rating ratings={ratings} index={id}/></li>
         </ul>
         <div className="infos">

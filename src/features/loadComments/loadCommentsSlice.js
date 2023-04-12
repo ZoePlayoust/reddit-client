@@ -27,7 +27,6 @@ export const loadCommentsSlice = createSlice({
       .addCase(loadCurrentComment.fulfilled, (state, action) => {
         state.isLoadingCurrentComment = false;
         state.hasError = false;
-        console.log(action.payload);
         const [json, id, sub] = action.payload;
         state.commentsLoaded = {
           ...state.commentsLoaded,
@@ -46,5 +45,7 @@ export const loadCommentsSlice = createSlice({
 });
 
 export const selectLoadedComment = (state) => state.loadComments.commentsLoaded;
+
+export const isLoadingComments = (state) => state.loadComments.isLoadingComments;
 
 export default loadCommentsSlice.reducer;

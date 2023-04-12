@@ -9,6 +9,7 @@ import Post from '../../components/post';
 import subredditList from '../../components/subredditList';
 import { selectSearchTerm, setSearchTerm } from '../search/searchSlice';
 
+
 const CurrentSubreddit = () => {
   const dispatch = useDispatch();
   const currentSubreddit = useSelector(selectCurrentSubreddit);
@@ -25,7 +26,7 @@ const CurrentSubreddit = () => {
   }, [dispatch]);
 
   if (currentSubredditIsLoading) {
-    return <div>Loading</div>;
+    return <div className='loading-message big'>Loading ...</div>;
   } else if (currentSubreddit === null) {
     return null;
   }

@@ -14,6 +14,7 @@ const CommentDisplay = (props) => {
   const subreddit = useSelector(selectCurrentSubreddit);
   const currentSubreddit = subreddit[0].data.subreddit 
   const comments = useSelector(selectComment);
+  
  
   const checkIsOpened = (id) => {
     return comments[currentSubreddit]?.[id]?.isOpened || false;
@@ -56,7 +57,7 @@ const CommentDisplay = (props) => {
                 aria-label="expand"
                 size="small"
               />
-              <span className="comment-number">{commentsNumber}</span>
+              <span className="comment-number" id={commentsNumber+redditId}>{commentsNumber}</span>
             </div>
           </li>
         </ul>

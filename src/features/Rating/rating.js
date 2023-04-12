@@ -33,6 +33,7 @@ const Rating = (props) => {
 
   const isPlusClicked = ratingsData[id] === 1;
   const isMinusClicked = ratingsData[id] === -1;
+ 
 
   return (
     <div className="ratings">

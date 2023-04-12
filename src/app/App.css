@@ -120,6 +120,7 @@ li.subreddit-item:hover{
    
         div.subreddit{
          font-size: 10px;
+         max-height: 115px;
         }
         }
 
@@ -151,20 +152,29 @@ list-style: none;
 height:max-content; 
 }
 
-.title-list{
+ul.title-list{
     padding: 15px 15px; 
-    font-weight: 700;
-    
+    font-weight: 700; 
+}
+
+a.title{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+a.title:hover{
+    color: darkslategray;
 }
 
 
-
 ul.extra-infos{
-    padding: 15px 5px 
+    padding: 15px 15px; 
+    font-weight: 600;
 }
 
 div.comment-teaser:hover{
     cursor: pointer;
+    color: darkslategray;
     }
 
 span.comment-number{
@@ -175,6 +185,22 @@ span.comment-number{
 div.main-content {
     margin-bottom: 5px;
 }
+
+.loading-message{
+    font-family: 'Press Start 2P', cursive;
+    padding-left: 15px;
+    }
+
+
+
+div.small{
+    font-size: 12px;
+}
+div.big{
+    font-size: 24px;
+    padding-bottom: 800px;
+}
+
 
 @media only screen and (max-width: 750px) {
     .title{
