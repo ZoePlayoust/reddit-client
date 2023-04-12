@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /*General*/
+.app{
+    background-image: linear-gradient(rgba(233, 240, 255, 0.411), rgba(18, 176, 73, 0.219)), url('https://www.toptal.com/designers/subtlepatterns/uploads/geometric-leaves.png');
+    background-size:auto ; 
+}
+
 .grid{
     display: grid;
     grid-template-columns: 25% 75%;
@@ -7,7 +14,7 @@
   
   @media only screen and (min-width: 750px) {
    .grid{
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 20% 80%;
    }
   }
 
@@ -27,17 +34,19 @@
 
 /*Header*/
 h1{
-    font-size: 18px;
+    font-size: 26px;
    }
    
 .header{
     color: #0c080a;
-    margin: 10px 25px;
+    padding: 10px 25px;
     display: flex;
+    margin-bottom: 10px;
     justify-content: space-between;
     align-items: center;
     border-bottom: black 1px solid;
-    position: sticky;
+    font-family: 'Press Start 2P', cursive;
+    
 }
 
 .search-bar{
@@ -58,12 +67,62 @@ h1{
     }
     .header{
         display:block;
+        text-align: center;
      
     }
     .inputs{
         padding-bottom: 10px
     }
 }
+
+@media only screen and (max-width: 900px) {
+   
+    h1{
+        font-size: 18px;
+    }
+    }
+    @media only screen and (max-width: 750px) {
+   
+        h1{
+         font-size: 12px;   
+        }
+        }
+
+/* Subreddits */
+
+div.subreddit{
+    background-color: white;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    max-height: 145px;
+    margin-bottom: 5px;
+    font-family: 'Press Start 2P', cursive;
+    
+
+}
+
+li.subreddit-item{
+    margin: 10px 0 10px 5px;
+    color: rgb(0, 0, 0) !important;
+    font-weight: bold;
+}
+li.subreddit-item:hover{
+    color: darkslategray !important;
+}
+@media only screen and (max-width: 750px) {
+   
+    div.subreddit{
+     margin-right: 0px;   
+    }
+    }
+    @media only screen and (max-width: 1024px) {
+   
+        div.subreddit{
+         font-size: 10px;
+        }
+        }
+
 
 /*Post*/
 
@@ -82,6 +141,7 @@ img{
     border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 5px;
+    background-color: white;
 }
 
 ul.title-list, ul.extra-infos{
@@ -128,29 +188,44 @@ div.main-content {
    }
 
 /* Ratings */
+
+.ratings{
+    font-family: 'Press Start 2P', cursive; 
+}
+
+.rating-score{
+    vertical-align: top;
+}
 .minus{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 100;
     color: red;
     padding-right : 10px;
+    vertical-align: top;
 }
 .minus:hover{
    cursor: pointer;
 }
 .plus{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 100;
     color:green;
     padding-left : 10px;
+   
 }
 .plus:hover{
     cursor: pointer;
  }
 
  .bordered {
-    font-weight: bolder;
+    font-size: 22px;
   }
   
+  @media only screen and (max-width: 750px) {
+    div.ratings{
+     font-size: 12px
+    }
+   }
 /*Subreddit*/
 
 ul{
@@ -196,6 +271,7 @@ li.comments-name, .comments-date{
     
 }
 
+
 li.comments-name{
     font-weight: bold;
 }
@@ -204,4 +280,9 @@ p.comments-body{
 }
 .arrow-icon:hover{
 cursor: pointer;
+}
+
+.no-comments{
+    padding: 5px 15px;
+    font-weight: 700;
 }

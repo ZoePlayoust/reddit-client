@@ -33,7 +33,7 @@ const CurrentComment = (props) => {
     const comments = commentsLoaded[currentSubreddit] && commentsLoaded[currentSubreddit][id];
 
     if (!comments || comments.length<1) {
-      return <div>There are no comments</div>;
+      return <div className='no-comments'>There are no comments :(</div>;
     } else {
       return (
         <div className='comments-container'>

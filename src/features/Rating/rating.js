@@ -35,21 +35,21 @@ const Rating = (props) => {
   const isMinusClicked = ratingsData[id] === -1;
 
   return (
-    <span>
+    <div className="ratings">
       <span
         className={`minus ${isMinusClicked ? 'bordered' : ''}`}
         onClick={isMinusClicked ? handleReset : handleDecrement}
       >
         -
       </span>
-      {score ? ratings + score : ratings}
+     <span className='rating-score'>{score ? ratings + score : ratings}</span> 
       <span
         className={`plus ${isPlusClicked ? 'bordered' : ''}`}
         onClick={isPlusClicked ? handleReset : handleIncrement}
       >
         +
       </span>
-    </span>
+    </div>
   );
 };
 
