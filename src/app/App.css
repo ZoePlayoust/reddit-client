@@ -188,10 +188,18 @@ div.main-content {
 
 .loading-message{
     font-family: 'Press Start 2P', cursive;
-    padding-left: 15px;
-    }
+    animation: bounce 0.2s infinite alternate;
+    padding: 10px 0 10px 15px;
+}
 
-
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
 
 div.small{
     font-size: 12px;

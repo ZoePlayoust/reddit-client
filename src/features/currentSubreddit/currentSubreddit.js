@@ -26,7 +26,7 @@ const CurrentSubreddit = () => {
   }, [dispatch]);
 
   if (currentSubredditIsLoading) {
-    return <div className='loading-message big'>Loading ...</div>;
+    return <div className='loading-message big bounce'>Loading ...</div>;
   } else if (currentSubreddit === null) {
     return null;
   }
