@@ -32,7 +32,6 @@ npm start
 The app should now be running locally at http://localhost:3000/.
 
 
-
 ## Features
 Through this app you can: 
 - Navigate selected Subreddit. 
@@ -40,6 +39,9 @@ Through this app you can:
 - You can upvote or downvote locally posts. 
 - The navigation data is stored.
 - Search through post's names
+
+## Wireframe 
+![Wireframe of the reddit app](/public/Wireframe.jpg)
 
 
 ## Technologies Used
@@ -57,3 +59,6 @@ I used Chat GPT to check my code
 ## Contact
 Please email me at [playoustz@gmail.com](mailto:playoustz@gmail.com) for any inquiries.
 
+## Future improvements
+- Possibility for the user to add custom subreddit 
+- Improve design 
