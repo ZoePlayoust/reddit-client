@@ -25,7 +25,7 @@ return (
             <li className="ratings"><Rating ratings={ratings} index={id}/></li>
         </ul>
         <div className="infos">
-            { (article.thumbnail !== 'self' && article.is_gallery !== true && article.is_video !== true ) ? <img src={img} alt="title"></img> : ' '}
+            { (article.thumbnail !== 'self' && article.is_gallery !== true && article.is_video !== true ) ? <img src={img} alt={title}></img> : ' '}
             <CommentDisplay commentsNumber={commentsNumber +` `} index={index} author={author} date={date} redditId={redditId}/>
         </div>
     </li>
