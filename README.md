@@ -37,8 +37,9 @@ The app should now be running locally at http://localhost:3000/.
 Through this app you can: 
 - Navigate selected Subreddit. 
 - You can display the comments. 
-- You can upvote or downvote locally posts 
-- The navigation data is stored
+- You can upvote or downvote locally posts. 
+- The navigation data is stored.
+- Search through post's names
 
 
 ## Technologies Used
